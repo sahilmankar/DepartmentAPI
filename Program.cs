@@ -4,7 +4,7 @@ using DepartmentAPI.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddCors();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddTransient<IDepartmentRepository,DepartmentRepository>();
@@ -23,6 +23,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+    app.UseCors(x => x.AllowAnyOrigin()
+                      .AllowAnyMethod()
+                      .AllowAnyHeader());
+ 
 
 app.UseAuthorization();
 

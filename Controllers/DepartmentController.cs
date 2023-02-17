@@ -17,7 +17,7 @@ public class DepartmentController : ControllerBase
         this._service = service;
     }
 
-    [HttpGet("api/getall")]
+    [HttpGet("/api/departments")]
 
     public IActionResult GetAllDepartments()
     {
@@ -42,7 +42,7 @@ public class DepartmentController : ControllerBase
     }
 
 
-    [HttpGet("api/get-department/{id}")]
+    [HttpGet("/api/departments/{id}")]
     public IActionResult GetById(int id)
     {
         try
@@ -66,7 +66,7 @@ public class DepartmentController : ControllerBase
     }
 
 
-    [HttpPost("api/insert")]
+    [HttpPost("/api/departments/insert")]
     public IActionResult InsertDepartment([FromBody] Department department)
     {
         try
@@ -75,7 +75,7 @@ public class DepartmentController : ControllerBase
 
             if (status)
             {
-                return Ok();
+                return Ok("Record Inserted sucessfully");
             }
             else
             {
@@ -89,7 +89,7 @@ public class DepartmentController : ControllerBase
     }
 
 
-    [HttpPut("api/update")]
+    [HttpPut("/api/departments/update")]
 
     public IActionResult UpdateDepartment ( [FromBody] Department department)
     {
@@ -98,7 +98,7 @@ public class DepartmentController : ControllerBase
             bool status = _service.UpdateDepartment(department);
             if (status)
             {
-                return Ok();
+                return Ok("Record Updated sucessfully");
             }
             else
             {
@@ -111,7 +111,7 @@ public class DepartmentController : ControllerBase
         }
     }
 
-    [HttpDelete("api/delete/{id}")]
+    [HttpDelete("/api/departments/delete/{id}")]
     public IActionResult DeleteDepartment(int id)
     {
         try
@@ -119,7 +119,7 @@ public class DepartmentController : ControllerBase
             bool status = _service.DeleteDepartment(id);
             if (status)
             {
-                return Ok();
+                return Ok("Record deleted sucessfully");
             }
             else
             {
