@@ -51,7 +51,7 @@ public class DepartmentController : ControllerBase
             var message = _service.GetDepartmentById(id);
             if (message == null)
             {
-                return BadRequest();
+                return NotFound();
             }
             else
             {
@@ -75,7 +75,8 @@ public class DepartmentController : ControllerBase
 
             if (status)
             {
-                return Ok("Record Inserted sucessfully");
+                return Ok();
+                //  return Ok("Record Inserted sucessfully");
             }
             else
             {
@@ -98,7 +99,8 @@ public class DepartmentController : ControllerBase
             bool status = _service.UpdateDepartment(department);
             if (status)
             {
-                return Ok("Record Updated sucessfully");
+                //return Ok("Record Updated sucessfully");
+                  return Ok();
             }
             else
             {
@@ -119,7 +121,8 @@ public class DepartmentController : ControllerBase
             bool status = _service.DeleteDepartment(id);
             if (status)
             {
-                return Ok("Record deleted sucessfully");
+              return Ok();
+              //  return Ok("Record deleted sucessfully");
             }
             else
             {

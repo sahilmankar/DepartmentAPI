@@ -4,6 +4,7 @@ using DepartmentAPI.Models;
 namespace DepartmentAPI.Context;
 
  public class CollectionContext:DbContext{
+
     public DbSet<Department> Departments {get;set;}
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
