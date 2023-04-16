@@ -1,11 +1,11 @@
-CREATE database  transflower;
+
+DROP DATABASE If EXISTS transflower;
+CREATE DATABASE  transflower;
 USE  transflower;
-
-create table Departments(id int not null primary key auto_increment,
-                         name varchar(25),     
-                         location varchar(25));
-
-
-INSERT INTO departments(name,location) VALUES('IT','Pune'), ('Marketing','Nashik'),
-                                             ('Training','Mumbai'),('PMO','Mumbai');
-
+CREATE TABLE Departments(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                         name VARCHAR(25),     
+                         location VARCHAR(25));
+INSERT INTO Departments(name,location) VALUES('IT','Pune'); 
+INSERT INTO Departments(name,location) VALUES ('Marketing','Nashik');
+INSERT INTO Departments(name,location) VALUES ('Training','Mumbai');
+INSERT INTO Departments(name,location) VALUES ('PMO','Mumbai');
